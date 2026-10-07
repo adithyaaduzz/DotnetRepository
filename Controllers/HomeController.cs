@@ -38,6 +38,21 @@ namespace Dynamicpage.Controllers
 
             return View();
         }
+        public IActionResult EmployeeDetails()
+        {
+            var people = new Person[]
+            {
+        new Person { Name = "Fathima", Age = 30, Salary = 50000, Address = "123 Main St" },
+        new Person { Name = "Anna George", Age = 25, Salary = 55000, Address = "456 Elm St" },
+        new Person { Name = "Benny", Age = 40, Salary = 60000, Address = "789 Oak St" },
+        new Person { Name = "Alice", Age = 27, Salary = 55000, Address = "321 Pine St" },
+        new Person { Name = "Arjun", Age = 35, Salary = 70000, Address = "654 Maple St" }
+            };
+
+            ViewBag.People = people;
+
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
